@@ -2,10 +2,11 @@
 var meditationBell = document.querySelector('#meditation-graphic');
 var displayedMessage = document.getElementById('displayed-message');
 var inputMessage = document.getElementById('custom-message-input');
+var typeOfMessage = document.getElementById('input-message-options');
 //buttons
 var buttonReceiveMessage = document.getElementById('receive-message');
-var buttonCreateMessage = document.getElementById('create-message');
-var buttonCompileMessage = document.getElementById('compile-message');
+var buttonAddMessage = document.getElementById('create-message');
+var buttonSubmitMessage = document.getElementById('compile-message');
 var radioAffirmation = document.getElementById('affirmation');
 var radioMantra = document.getElementById('mantra');
 
@@ -51,8 +52,8 @@ var mantras = [
 
 //event listeners
 buttonReceiveMessage.addEventListener("click", displayMessage);
-buttonCreateMessage.addEventListener('click', showCustomForm);
-buttonCompileMessage.addEventListener('click', compileNewMessage);
+buttonAddMessage.addEventListener('click', showCustomForm);
+buttonSubmitMessage.addEventListener('click', compileNewMessage);
 //functions and event handlers
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -79,11 +80,18 @@ function showCustomForm() {
     displayedMessage.classList.add("hidden");
   }
   formRadioButtons.classList.add('hidden');
-  buttonCreateMessage.classList.add('hidden');
+  buttonAddMessage.classList.add('hidden');
   buttonReceiveMessage.classList.add('hidden');
   formCustomMessageCenter.classList.remove('hidden');
 }
 
 
 function compileNewMessage() {
-}
+  if(typeOfMessage.value === 'Affirmation') {
+    console.log("Affirmation");
+  } else if(typeOfMessage.value === 'Mantra') {
+      console.log("Mantra");
+    } else {
+      alert("select a message type");
+    }
+  }
