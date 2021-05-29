@@ -1,12 +1,16 @@
 //query selectors
 var meditationBell = document.querySelector('#meditation-graphic');
-var buttonReceiveMessage = document.getElementById('receive-message');
 var displayedMessage = document.getElementById('displayed-message');
+//buttons
+var buttonReceiveMessage = document.getElementById('receive-message');
+var buttonCreateMessage = document.getElementById('create-message');
+var buttonCompileMessage = document.getElementById('compile-message');
 var radioAffirmation = document.getElementById('affirmation');
 var radioMantra = document.getElementById('mantra');
-var buttonCreateMessage = document.getElementById('create-message');
+//forms
 var formRadioButtons = document.querySelector('.radio-buttons');
 var formMessageCenter = document.querySelector('.message-center');
+var formCustomMessageCenter = document.querySelector('.custom-message-center');
 
 //data
 var affirmations = [
@@ -64,7 +68,11 @@ function displayMessage() {
 }
 
 function showCustomForm() {
-  formRadioButtons.classList.add('hidden');
+//  formRadioButtons.classList.add('hidden');
   formMessageCenter.classList.add('hidden');
   buttonCreateMessage.classList.add('hidden');
+  buttonReceiveMessage.classList.add('hidden');
+//  buttonCompileMessage.classList.remove('hidden');
+  formCustomMessageCenter.classList.remove('hidden');
+//  formCustomMessageCenter.classList.add('radio-buttons');
 }
