@@ -50,6 +50,7 @@ var mantras = [
   "I am the sky, the rest is weather.",
 ];
 
+
 //event listeners
 buttonReceiveMessage.addEventListener("click", displayMessage);
 buttonAddMessage.addEventListener('click', showCustomForm);
@@ -60,17 +61,20 @@ function getRandomIndex(array) {
 }
 
 function displayMessage() {
-  if (!meditationBell.classList.contains("hidden")) {
-    meditationBell.classList.add("hidden");
-    displayedMessage.classList.remove('hidden');
-  }
-  if (radioAffirmation.checked) {
-    displayedMessage.innerText = affirmations[getRandomIndex(affirmations)];
-  }
-  if (radioMantra.checked) {
-    displayedMessage.innerText = mantras[getRandomIndex(mantras)];
+  if (radioMantra.checked || radioAffirmation.checked) {
+    if (!meditationBell.classList.contains("hidden")) {
+      meditationBell.classList.add("hidden");
+      displayedMessage.classList.remove("hidden");
+    }
+    if (radioAffirmation.checked) {
+      displayedMessage.innerText = affirmations[getRandomIndex(affirmations)];
+    }
+    if (radioMantra.checked) {
+      displayedMessage.innerText = mantras[getRandomIndex(mantras)];
+    }
   }
 }
+
 
 function showCustomForm() {
   if (!meditationBell.classList.contains("hidden")) {
@@ -81,17 +85,29 @@ function showCustomForm() {
   }
   formRadioButtons.classList.add('hidden');
   buttonAddMessage.classList.add('hidden');
-  buttonReceiveMessage.classList.add('hidden');
   formCustomMessageCenter.classList.remove('hidden');
 }
 
 
 function compileNewMessage() {
+  var customMessage = inputMessage.value;
+
   if(typeOfMessage.value === 'Affirmation') {
-    console.log("Affirmation");
+    affirmations.push(customMessage);
   } else if(typeOfMessage.value === 'Mantra') {
-      console.log("Mantra");
+      mantras.push(customMessage);
     } else {
       alert("select a message type");
+      return
     }
+  displayCustomMessage(customMessage);
+  }
+
+  function displayCustomMessage(message) {
+    formRadioButtons.classList.remove('hidden');
+    buttonAddMessage.classList.remove('hidden');
+    displayedMessage.classList.remove('hidden');
+    formCustomMessageCenter.classList.add('hidden');
+
+    displayedMessage.innerText = message;
   }
