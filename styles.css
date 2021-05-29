@@ -58,6 +58,7 @@ html {
   width: 30em;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 #meditation-graphic {
@@ -69,10 +70,13 @@ html {
 
 #displayed-message {
   padding: 1em;
-  text-align: center;
 }
 
 #create-message {
+  margin: 15px auto;
+}
+
+#compile-message {
   margin: 15px auto;
 }
 
