@@ -37,13 +37,12 @@ html {
   font-size: larger;
   font-style: italic;
   text-align: center;
-  height: 90px;
   width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#receive-message {
+.buttons {
   border-radius: 4px;
   border: 0;
   color: #ffffff;
@@ -57,19 +56,34 @@ html {
   border: 1px solid black;
   border-radius: 4px;
   width: 30em;
-  height: 5em;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 #meditation-graphic {
   display: block;
-  height: 80%;
-  width: 80%;
+  height: 15%;
+  width: 15%;
   margin: 0 auto;
 }
 
 #displayed-message {
   padding: 1em;
+}
+
+#create-message {
+  margin: 15px auto;
+}
+
+#compile-message {
+  margin: 15px auto;
+}
+
+#custom-message-input {
+  width: 65%;
+}
+
+.custom-button {
   text-align: center;
 }

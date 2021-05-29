@@ -1,9 +1,19 @@
 //query selectors
 var meditationBell = document.querySelector('#meditation-graphic');
-var buttonReceiveMessage = document.getElementById('receive-message');
 var displayedMessage = document.getElementById('displayed-message');
+var inputMessage = document.getElementById('custom-message-input');
+var typeOfMessage = document.getElementById('input-message-options');
+//buttons
+var buttonReceiveMessage = document.getElementById('receive-message');
+var buttonAddMessage = document.getElementById('create-message');
+var buttonSubmitMessage = document.getElementById('compile-message');
 var radioAffirmation = document.getElementById('affirmation');
 var radioMantra = document.getElementById('mantra');
+
+//forms
+var formRadioButtons = document.querySelector('.radio-buttons');
+var formMessageCenter = document.querySelector('.message-center');
+var formCustomMessageCenter = document.getElementById('custom-message-center');
 
 //data
 var affirmations = [
@@ -40,22 +50,64 @@ var mantras = [
   "I am the sky, the rest is weather.",
 ];
 
+
 //event listeners
 buttonReceiveMessage.addEventListener("click", displayMessage);
-
+buttonAddMessage.addEventListener('click', showCustomForm);
+buttonSubmitMessage.addEventListener('click', compileNewMessage);
 //functions and event handlers
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
 function displayMessage() {
+  if (radioMantra.checked || radioAffirmation.checked) {
+    if (!meditationBell.classList.contains("hidden")) {
+      meditationBell.classList.add("hidden");
+      displayedMessage.classList.remove("hidden");
+    }
+    if (radioAffirmation.checked) {
+      displayedMessage.innerText = affirmations[getRandomIndex(affirmations)];
+    }
+    if (radioMantra.checked) {
+      displayedMessage.innerText = mantras[getRandomIndex(mantras)];
+    }
+  }
+}
+
+
+function showCustomForm() {
   if (!meditationBell.classList.contains("hidden")) {
     meditationBell.classList.add("hidden");
   }
-  if (radioAffirmation.checked) {
-    displayedMessage.innerText = affirmations[getRandomIndex(affirmations)];
+  if(!displayedMessage.classList.contains("hidden")) {
+    displayedMessage.classList.add("hidden");
   }
-  if (radioMantra.checked) {
-    displayedMessage.innerText = mantras[getRandomIndex(mantras)];
-  }
+  formRadioButtons.classList.add('hidden');
+  buttonAddMessage.classList.add('hidden');
+  formCustomMessageCenter.classList.remove('hidden');
 }
+
+
+function compileNewMessage() {
+  var customMessage = inputMessage.value;
+
+  if(typeOfMessage.value === 'Affirmation') {
+    affirmations.push(customMessage);
+  } else if(typeOfMessage.value === 'Mantra') {
+      mantras.push(customMessage);
+    } else {
+      alert("select a message type");
+      return
+    }
+  displayCustomMessage(customMessage);
+  }
+
+  function displayCustomMessage(message) {
+    formRadioButtons.classList.remove('hidden');
+    buttonAddMessage.classList.remove('hidden');
+    displayedMessage.classList.remove('hidden');
+    formCustomMessageCenter.classList.add('hidden');
+
+    displayedMessage.innerText = message;
+  }

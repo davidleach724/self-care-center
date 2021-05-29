@@ -14,12 +14,28 @@
         <input type="radio" id="mantra" name="message" value="mantra">
         <label for="mantra">mantra</label><br>
       </div>
-      <button id="receive-message">Receive Message</button>
+      <button id="receive-message" class="buttons">Receive Message</button>
     </section><br>
     <section class="message-center">
       <img id="meditation-graphic" src="assets/meditate.svg" alt="meditation station bell">
-      <p id='displayed-message'></p>
+      <p id='displayed-message' class="hidden"></p>
+      <section id="custom-message-center" class="hidden"><br>
+        <label>Type your custom message below..</label>  <br>
+        <input type="text" id="custom-message-input"><br>
+          <div><br>
+            <label>Choose type of message..</label><br>
+            <input list="message-options" id="input-message-options" />
+            <datalist id="message-options">
+              <option value="Affirmation">
+              <option value="Mantra">
+            </datalist>
+          </div>
+        <button id="compile-message" class="buttons">Submit</button>
+      </section>
     </section>
+    <div class="custom-button">
+      <button id="create-message" class="buttons">Add Message</button>
+    </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
