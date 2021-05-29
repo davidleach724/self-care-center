@@ -4,6 +4,9 @@ var buttonReceiveMessage = document.getElementById('receive-message');
 var displayedMessage = document.getElementById('displayed-message');
 var radioAffirmation = document.getElementById('affirmation');
 var radioMantra = document.getElementById('mantra');
+var buttonCreateMessage = document.getElementById('create-message');
+var formRadioButtons = document.querySelector('.radio-buttons');
+var formMessageCenter = document.querySelector('.message-center');
 
 //data
 var affirmations = [
@@ -42,7 +45,7 @@ var mantras = [
 
 //event listeners
 buttonReceiveMessage.addEventListener("click", displayMessage);
-
+buttonCreateMessage.addEventListener('click', showCustomForm);
 //functions and event handlers
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -58,4 +61,10 @@ function displayMessage() {
   if (radioMantra.checked) {
     displayedMessage.innerText = mantras[getRandomIndex(mantras)];
   }
+}
+
+function showCustomForm() {
+  formRadioButtons.classList.add('hidden');
+  formMessageCenter.classList.add('hidden');
+  buttonCreateMessage.classList.add('hidden');
 }
