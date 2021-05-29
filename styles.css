@@ -7,6 +7,10 @@ white - #ffffff;
 black - #000000;
 */
 
+.hidden {
+  display: none!important;
+}
+
 html {
   height:100%;
   background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
@@ -63,4 +67,9 @@ html {
   height: 80%;
   width: 80%;
   margin: 0 auto;
+}
+
+#displayed-message {
+  padding: 1em;
+  text-align: center;
 }
