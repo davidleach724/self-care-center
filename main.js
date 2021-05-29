@@ -10,7 +10,7 @@ var radioMantra = document.getElementById('mantra');
 //forms
 var formRadioButtons = document.querySelector('.radio-buttons');
 var formMessageCenter = document.querySelector('.message-center');
-var formCustomMessageCenter = document.querySelector('.custom-message-center');
+var formCustomMessageCenter = document.getElementById('custom-message-center');
 
 //data
 var affirmations = [
@@ -58,6 +58,7 @@ function getRandomIndex(array) {
 function displayMessage() {
   if (!meditationBell.classList.contains("hidden")) {
     meditationBell.classList.add("hidden");
+    displayedMessage.classList.remove('hidden');
   }
   if (radioAffirmation.checked) {
     displayedMessage.innerText = affirmations[getRandomIndex(affirmations)];
@@ -68,11 +69,14 @@ function displayMessage() {
 }
 
 function showCustomForm() {
-//  formRadioButtons.classList.add('hidden');
-  formMessageCenter.classList.add('hidden');
+  if (!meditationBell.classList.contains("hidden")) {
+    meditationBell.classList.add("hidden");
+  }
+  if(!displayedMessage.classList.contains("hidden")) {
+    displayedMessage.classList.add("hidden");
+  }
+  formRadioButtons.classList.add('hidden');
   buttonCreateMessage.classList.add('hidden');
   buttonReceiveMessage.classList.add('hidden');
-//  buttonCompileMessage.classList.remove('hidden');
   formCustomMessageCenter.classList.remove('hidden');
-//  formCustomMessageCenter.classList.add('radio-buttons');
 }
