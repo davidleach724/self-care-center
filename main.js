@@ -8,8 +8,7 @@ var buttonCreateMessage = document.getElementById('create-message');
 var buttonCompileMessage = document.getElementById('compile-message');
 var radioAffirmation = document.getElementById('affirmation');
 var radioMantra = document.getElementById('mantra');
-var radioCustomAffirmation = document.getElementById('affirmation-custom');
-var radioCustomMantra = document.getElementById('mantra-custom');
+
 //forms
 var formRadioButtons = document.querySelector('.radio-buttons');
 var formMessageCenter = document.querySelector('.message-center');
@@ -87,12 +86,4 @@ function showCustomForm() {
 
 
 function compileNewMessage() {
-  if(radioCustomAffirmation.checked) {
-    console.log('affirmation', inputMessage.value);
-  } else if(radioCustomMantra.checked) {
-    console.log('mantra', inputMessage.value);
-  } else {
-    alert('Please select \'Affirmation\' or \'Mantra\'');
-  }
-
 }
