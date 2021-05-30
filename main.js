@@ -2,7 +2,7 @@
 var meditationBell = document.querySelector('#meditation-graphic');
 var displayedMessage = document.getElementById('displayed-message');
 var inputMessage = document.getElementById('custom-message-input');
-var typeOfMessage = document.getElementById('input-message-options');
+var inputTypeOfMessage = document.getElementById('input-message-options');
 //buttons
 var buttonReceiveMessage = document.getElementById('receive-message');
 var buttonAddMessage = document.getElementById('create-message');
@@ -55,6 +55,7 @@ var mantras = [
 buttonReceiveMessage.addEventListener("click", displayMessage);
 buttonAddMessage.addEventListener('click', showCustomForm);
 buttonSubmitMessage.addEventListener('click', compileNewMessage);
+
 //functions and event handlers
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -92,9 +93,11 @@ function showCustomForm() {
 function compileNewMessage() {
   var customMessage = inputMessage.value;
 
-  if(typeOfMessage.value === 'Affirmation') {
+  if(inputTypeOfMessage.value === 'Affirmation') {
+    radioAffirmation.checked = true;
     affirmations.push(customMessage);
-  } else if(typeOfMessage.value === 'Mantra') {
+  } else if(inputTypeOfMessage.value === 'Mantra') {
+      radioMantra.checked = true;
       mantras.push(customMessage);
     } else {
       alert("select a message type");
