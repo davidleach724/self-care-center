@@ -84,14 +84,15 @@ function showCustomForm() {
 function compileNewMessage() {
   var customMessage = inputMessage.value;
 
-  if (customMessage === 'Affirmation') {
+  if (inputTypeOfMessage.value === 'Affirmation') {
     affirmations.push(customMessage);
     radioAffirmation.checked = true;
-  } else if (customMessage === 'Mantra') {
+  } else if (inputTypeOfMessage.value === 'Mantra') {
     mantras.push(customMessage);
     radioMantra.checked = true;
   } else {
-    return alert('Please select a message type');
+    alert('Please select a message type');
+    return
   }
   displayCustomMessage(customMessage);
 }
