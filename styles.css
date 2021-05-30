@@ -26,8 +26,16 @@ html {
   color: #ffffff;
 }
 
+#affirmationid {
+  margin: 0px 100px 0px 0px;
+}
+
 .divider {
   margin: 5em;
+}
+
+.radio-inputs {
+  margin: 3%
 }
 
 .radio-buttons {
@@ -47,7 +55,6 @@ html {
   border: 0;
   color: #ffffff;
   background-color: #134d71;
-  margin: 7% 5%;
   padding: 2px 19px;
 }
 
@@ -62,8 +69,8 @@ html {
 
 #meditation-graphic {
   display: block;
-  height: 10%;
-  width: 10%;
+  height: 8%;
+  width: 8%;
   margin: auto;
   padding: 25px;
 }

@@ -3,6 +3,7 @@ var meditationBell = document.querySelector('#meditation-graphic');
 var displayedMessage = document.getElementById('displayed-message');
 var inputMessage = document.getElementById('custom-message-input');
 var inputTypeOfMessage = document.getElementById('input-message-options');
+var messageTypeHeader = document.getElementById('message-type');
 //buttons
 var buttonReceiveMessage = document.getElementById('receive-message');
 var buttonAddMessage = document.getElementById('create-message');
@@ -78,6 +79,7 @@ function showCustomForm() {
   displayedMessage.classList.add('hidden');
   formRadioButtons.classList.add('hidden');
   buttonAddMessage.classList.add('hidden');
+  messageTypeHeader.classList.add('hidden');
   formCustomMessageCenter.classList.remove('hidden');
 }
 
@@ -101,6 +103,7 @@ function displayCustomMessage(message) {
   formRadioButtons.classList.remove('hidden');
   buttonAddMessage.classList.remove('hidden');
   displayedMessage.classList.remove('hidden');
+  messageTypeHeader.classList.remove('hidden');
   formCustomMessageCenter.classList.add('hidden');
 
   displayedMessage.innerText = message;
