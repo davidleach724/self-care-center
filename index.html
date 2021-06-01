@@ -6,16 +6,18 @@
   </head>
   <body>
     <h1 id='main-title'>✨Self Care Center✨</h1>
+    <div class='divider'></div>
     <h3 id='message-type'>Which type of message?</h3>
     <section class="radio-buttons">
-      <div>
+      <div class="radio-inputs">
         <input type="radio" id="affirmation" name="message" value="affirmation">
-        <label for="affirmation">affirmation</label>
+        <label id="affirmationid" for="affirmation">affirmation</label>
         <input type="radio" id="mantra" name="message" value="mantra">
         <label for="mantra">mantra</label><br>
       </div>
       <button id="receive-message" class="buttons">Receive Message</button>
     </section><br>
+    <div class='divider'></div>
     <section class="message-center">
       <img id="meditation-graphic" src="assets/meditate.svg" alt="meditation station bell">
       <p id='displayed-message' class="hidden"></p>

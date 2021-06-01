@@ -15,18 +15,27 @@ html {
   height:100%;
   background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   font-family: 'Quicksand', sans-serif;
+  text-align: center;
 }
 
 #main-title {
   color: #ffffff;
-  text-align: center;
 }
 
 #message-type {
   color: #ffffff;
-  text-align: center;
-  top: 20%;
-  left: 50%;
+}
+
+#affirmationid {
+  margin: 0px 100px 0px 0px;
+}
+
+.divider {
+  margin: 5em;
+}
+
+.radio-inputs {
+  margin: 3%
 }
 
 .radio-buttons {
@@ -36,10 +45,9 @@ html {
   color: #000000;
   font-size: larger;
   font-style: italic;
-  text-align: center;
-  width: 360px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 500px;
+  height: 90px;
+  margin: auto;
 }
 
 .buttons {
@@ -47,7 +55,6 @@ html {
   border: 0;
   color: #ffffff;
   background-color: #134d71;
-  margin: 10% 5%;
   padding: 2px 19px;
 }
 
@@ -55,17 +62,17 @@ html {
   background-color: #ffffff;
   border: 1px solid black;
   border-radius: 4px;
-  width: 30em;
+  width: 40em;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
 
 #meditation-graphic {
   display: block;
-  height: 15%;
-  width: 15%;
-  margin: 0 auto;
+  height: 8%;
+  width: 8%;
+  margin: auto;
+  padding: 25px;
 }
 
 #displayed-message {
